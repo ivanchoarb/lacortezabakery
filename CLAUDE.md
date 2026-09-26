@@ -26,12 +26,16 @@ de cada dato antes de cambiarlo.
 
 ## Pendiente declarado
 
-- Fotos reales entregadas por el cliente (`Imagenes cargadas/`, ignorada por
-  git) ya están en uso, copiadas con nombre descriptivo a `assets/hero/`. Son
-  thumbnails de baja resolución (335–599px) — de ahí que el hero las use en
-  tarjetas pequeñas rotadas, no a pantalla completa. Si el cliente entrega
-  las fotos originales en alta resolución, reemplazar los archivos en
-  `assets/hero/` manteniendo los mismos nombres.
+- El fondo del hero (`assets/hero/hero-fondo.jpg`) es una foto de stock de
+  Pexels (uso comercial libre, ver `referencias/REFERENCIAS.md` §Fuente 5),
+  **no es una foto real de La Corteza** — se eligió por coherencia de paleta
+  mientras el cliente no entregue fotografía profesional propia en alta
+  resolución. Cuando la entregue, reemplazar ese archivo.
+- Las fotos reales entregadas por el cliente (`Imagenes cargadas/`, ignorada
+  por git) siguen copiadas con nombre descriptivo en `assets/hero/`
+  (interior-barra, interior-comedor, equipo, burrata, logo, fachada) para
+  usarlas en otras secciones más adelante — son thumbnails de baja
+  resolución (335–599px), no aptas para fondo a pantalla completa.
 - Mapa embebido: por ahora es un enlace "Cómo llegar" a Google Maps; si se
   quiere el iframe embebido hace falta decidir si vale el peso de página.
 

@@ -34,7 +34,11 @@
 <main>
 
   <section class="hero" id="hero">
-    <div class="contenedor hero__grid">
+    <div class="hero__fondo" aria-hidden="true">
+      <img src="assets/hero/hero-fondo.jpg" alt="" loading="eager" fetchpriority="high" />
+    </div>
+    <div class="hero__velo" aria-hidden="true"></div>
+    <div class="contenedor hero__contenido">
       <div class="hero__texto">
         <p class="ojo-de-texto rev-item">Granada · Cali</p>
         <h1 class="hero__titulo" aria-label="El pan sale del horno antes que tú entres por la puerta">
@@ -49,7 +53,7 @@
         </p>
         <div class="hero__acciones rev-item">
           <a class="boton boton--acento boton--lg" href="https://wa.me/573173278616?text=Hola%2C%20quiero%20reservar%20una%20mesa%20en%20La%20Corteza" target="_blank" rel="noopener">Reservar mesa por WhatsApp</a>
-          <a class="enlace-secundario" href="#menu">Ver el menú ↓</a>
+          <a class="enlace-secundario enlace-secundario--claro" href="#menu">Ver el menú ↓</a>
         </div>
         <dl class="hero__datos rev-item">
           <div><dt>Google</dt><dd>4,8 / 5 · 273 opiniones</dd></div>
@@ -58,23 +62,6 @@
         </dl>
       </div>
 
-      <div class="hero__collage" aria-hidden="true">
-        <figure class="foto-flotante foto-flotante--barra" data-parallax="0.5" data-rot="-4">
-          <img src="assets/hero/interior-barra.jpeg" alt="" loading="eager" />
-        </figure>
-        <figure class="foto-flotante foto-flotante--comedor" data-parallax="0.9" data-rot="3">
-          <img src="assets/hero/interior-comedor.jpeg" alt="" loading="eager" />
-        </figure>
-        <figure class="foto-flotante foto-flotante--burrata" data-parallax="0.7" data-rot="-2">
-          <img src="assets/hero/burrata.jpeg" alt="" loading="eager" />
-        </figure>
-        <figure class="foto-flotante foto-flotante--equipo" data-parallax="1.1" data-rot="5">
-          <img src="assets/hero/equipo.jpeg" alt="" loading="eager" />
-        </figure>
-        <figure class="sello-logo" data-parallax="1.3" data-rot="-8">
-          <img src="assets/hero/logo-corteza.jpeg" alt="La Corteza Bakery & Coffee" loading="eager" />
-        </figure>
-      </div>
     </div>
   </section>
 

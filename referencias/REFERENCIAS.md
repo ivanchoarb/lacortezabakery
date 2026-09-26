@@ -82,6 +82,19 @@ en tarjetas pequeñas, nunca a pantalla completa.
 **Por qué:** reemplaza la paleta deducida del ícono de Instagram (más
 imprecisa) por colores muestreados directamente de las fotos del local.
 
+## Fuente 5 — Foto de stock para el fondo del hero
+
+El cliente pidió un hero de una sola imagen a pantalla completa. Como las
+fotos reales entregadas son thumbnails de baja resolución, se buscó en
+Pexels (licencia gratuita, uso comercial permitido, sin atribución
+obligatoria) una foto de interior de panadería que calzara con la paleta
+real: `assets/hero/hero-fondo.jpg`, techo terracota, vitrinas de vidrio, luz
+cálida de atardecer — fuente:
+pexels.com/photo/sunlit-modern-bakery-interior-design-37174129 (autor Talha
+Kugu). **No es una foto de La Corteza** — es de stock, elegida por
+coherencia visual, no por ser el local real. Si el cliente entrega fotografía
+profesional propia en alta resolución, esta es la primera que se reemplaza.
+
 ## Paleta real observada (del logo y las piezas de promoción)
 
 | Rol | Color aprox. | De dónde sale |

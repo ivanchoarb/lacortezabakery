@@ -23,48 +23,24 @@ const mm = gsap.matchMedia();
 mm.add("(prefers-reduced-motion: no-preference)", () => {
   const palabras = gsap.utils.toArray("[data-word]");
   const items = gsap.utils.toArray(".rev-item");
-  const fotos = gsap.utils.toArray(".foto-flotante");
-  const sello = document.querySelector(".sello-logo");
+  const fondo = document.querySelector(".hero__fondo img");
 
   gsap.set(palabras, { autoAlpha: 0, y: "0.6em" });
   gsap.set(items, { autoAlpha: 0, y: 18 });
-  fotos.forEach((f) => {
-    const rot = parseFloat(f.dataset.rot || 0);
-    gsap.set(f, { autoAlpha: 0, y: 60, scale: 0.85, rotate: rot * 2.4 });
-  });
-  gsap.set(sello, { autoAlpha: 0, scale: 0.5, rotate: -40 });
+  gsap.set(fondo, { scale: 1.15 });
 
   const entrada = gsap.timeline({ delay: 0.1, defaults: { ease: "power3.out" } });
   entrada
-    .to(palabras, { autoAlpha: 1, y: 0, duration: 0.7, stagger: 0.035 })
-    .to(items, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.1 }, "-=0.35")
-    .to(
-      fotos,
-      {
-        autoAlpha: 1,
-        y: 0,
-        scale: 1,
-        rotate: (i, t) => parseFloat(t.dataset.rot || 0),
-        duration: 0.85,
-        stagger: 0.12,
-        ease: "back.out(1.4)",
-      },
-      "-=0.5"
-    )
-    .to(
-      sello,
-      { autoAlpha: 1, scale: 1, rotate: -8, duration: 0.7, ease: "back.out(2)" },
-      "-=0.55"
-    );
+    .to(fondo, { scale: 1, duration: 1.6, ease: "power2.out" }, 0)
+    .to(palabras, { autoAlpha: 1, y: 0, duration: 0.7, stagger: 0.035 }, 0.2)
+    .to(items, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.1 }, "-=0.35");
 
-  // Parallax por capas al salir del hero: cada foto viaja a su propia velocidad.
-  fotos.concat(sello).forEach((f) => {
-    const vel = parseFloat(f.dataset.parallax || 0.6);
-    gsap.to(f, {
-      yPercent: -18 * vel,
-      ease: "none",
-      scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: 0.6 },
-    });
+  // Parallax: el fondo viaja más lento que el scroll al salir del hero.
+  gsap.to(fondo, {
+    yPercent: 12,
+    scale: 1.06,
+    ease: "none",
+    scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: 0.6 },
   });
 
   // Reveal del resto de la página, agrupado por sección.
