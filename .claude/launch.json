@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "la-corteza-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "-l", "8000", "/Users/ivandario/Documents/proyectos/Panaderia La Corteza Bakery & Coffee"],
+      "port": 8000
+    }
+  ]
+}

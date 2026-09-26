@@ -1,0 +1,95 @@
+/*
+  La Corteza Bakery & Coffee — design system
+  Fuente única de verdad. Nada de valores hardcodeados fuera de este archivo.
+  Ver .impeccable.md para el porqué de cada decisión.
+*/
+
+:root {
+  /* Primitivos OKLCH */
+  --primitivo-crema-99: oklch(97.5% 0.02 85);
+  --primitivo-crema-95: oklch(94% 0.03 80);
+  --primitivo-tinta-15: oklch(21% 0.02 55);
+  --primitivo-tinta-10: oklch(15% 0.015 55);
+  --primitivo-dorado-55: oklch(68% 0.13 75);
+  --primitivo-dorado-40: oklch(52% 0.12 70);
+  --primitivo-oxblood-35: oklch(33% 0.09 25);
+  --primitivo-madera-45: oklch(45% 0.05 50);
+  --primitivo-linea-90: oklch(88% 0.02 80);
+
+  /* Semánticos — color */
+  --color-fondo: var(--primitivo-crema-99);
+  --color-fondo-alterno: var(--primitivo-crema-95);
+  --color-texto: var(--primitivo-tinta-15);
+  --color-texto-suave: color-mix(in oklch, var(--primitivo-tinta-15) 70%, var(--primitivo-crema-99));
+  --color-acento: var(--primitivo-dorado-55);
+  --color-acento-hover: var(--primitivo-dorado-40);
+  --color-acento-texto: var(--primitivo-tinta-10);
+  --color-temporada: var(--primitivo-oxblood-35);
+  --color-madera: var(--primitivo-madera-45);
+  --color-borde: var(--primitivo-linea-90);
+  --color-superficie-oscura: var(--primitivo-tinta-15);
+  --color-superficie-oscura-texto: var(--primitivo-crema-99);
+
+  /* Tipografía */
+  --fuente-display: "Fraunces", Georgia, serif;
+  --fuente-texto: "Work Sans", system-ui, sans-serif;
+
+  --tam-100: 1rem;
+  --tam-125: 1.25rem;
+  --tam-156: 1.563rem;
+  --tam-195: 1.953rem;
+  --tam-244: 2.441rem;
+  --tam-305: 3.052rem;
+  --tam-381: 3.815rem;
+
+  --peso-texto: 400;
+  --peso-texto-fuerte: 600;
+  --peso-display: 500;
+  --peso-display-fuerte: 600;
+
+  /* Spacing — base 8pt */
+  --espacio-1: 0.5rem;
+  --espacio-2: 1rem;
+  --espacio-3: 1.5rem;
+  --espacio-4: 2rem;
+  --espacio-6: 3rem;
+  --espacio-8: 4rem;
+  --espacio-12: 6rem;
+  --espacio-16: 8rem;
+
+  /* Forma */
+  --radio-sm: 0.25rem;
+  --radio-md: 0.5rem;
+  --radio-pill: 999px;
+
+  /* Motion */
+  --easing-salida: cubic-bezier(0.16, 1, 0.3, 1);
+  --duracion-rapida: 150ms;
+  --duracion-media: 320ms;
+
+  /* Layout */
+  --ancho-contenido: 72rem;
+  --ancho-lectura: 40rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-fondo: var(--primitivo-tinta-15);
+    --color-fondo-alterno: var(--primitivo-tinta-10);
+    --color-texto: var(--primitivo-crema-99);
+    --color-texto-suave: color-mix(in oklch, var(--primitivo-crema-99) 75%, var(--primitivo-tinta-15));
+    --color-borde: color-mix(in oklch, var(--primitivo-crema-99) 18%, var(--primitivo-tinta-15));
+    --color-superficie-oscura: var(--primitivo-crema-99);
+    --color-superficie-oscura-texto: var(--primitivo-tinta-15);
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-fondo: var(--primitivo-tinta-15);
+  --color-fondo-alterno: var(--primitivo-tinta-10);
+  --color-texto: var(--primitivo-crema-99);
+  --color-texto-suave: color-mix(in oklch, var(--primitivo-crema-99) 75%, var(--primitivo-tinta-15));
+  --color-borde: color-mix(in oklch, var(--primitivo-crema-99) 18%, var(--primitivo-tinta-15));
+  --color-superficie-oscura: var(--primitivo-crema-99);
+  --color-superficie-oscura-texto: var(--primitivo-tinta-15);
+}
