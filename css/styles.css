@@ -1,7 +1,7 @@
 /* La Corteza — estilos de página. Tokens en /design-system.css */
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; } /* Lenis maneja el smooth scroll */
 body {
   margin: 0;
   background: var(--color-fondo);
@@ -91,29 +91,70 @@ p { margin: 0 0 var(--espacio-2); color: var(--color-texto-suave); }
 .enlace-secundario--claro { color: var(--color-superficie-oscura-texto); }
 
 /* Hero */
-.hero { padding-block: var(--espacio-16) var(--espacio-12); }
-.hero__grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--espacio-8); align-items: center; }
+.hero {
+  padding-block: var(--espacio-12) var(--espacio-16);
+  overflow: clip;
+  background: radial-gradient(120% 90% at 85% 0%, var(--color-fondo-alterno), var(--color-fondo) 60%);
+}
+.hero__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--espacio-8);
+  align-items: center;
+  min-height: 34rem;
+}
 .ojo-de-texto { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.8rem; color: var(--color-acento-hover); font-weight: var(--peso-texto-fuerte); margin-bottom: var(--espacio-1); }
+
+.hero__titulo { display: block; }
+.hero__titulo [data-linea] { display: block; }
+.hero__titulo [data-word] { display: inline-block; will-change: transform, opacity; }
+.hero__titulo-acento { color: var(--color-acento-hover); }
+
 .hero__parrafo { max-width: var(--ancho-lectura); font-size: 1.1rem; }
 .hero__acciones { display: flex; align-items: center; gap: var(--espacio-3); flex-wrap: wrap; margin-block: var(--espacio-3); }
 .hero__datos { display: flex; gap: var(--espacio-4); flex-wrap: wrap; margin-top: var(--espacio-4); padding-top: var(--espacio-3); border-top: 1px solid var(--color-borde); }
 .hero__datos dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-texto-suave); }
 .hero__datos dd { margin: 0; font-weight: var(--peso-texto-fuerte); }
 
-.hero__panel {
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radio-md);
-  background: radial-gradient(circle at 30% 20%, color-mix(in oklch, var(--color-acento) 35%, var(--color-fondo-alterno)), var(--color-madera) 75%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-fondo);
-  text-align: center;
-  box-shadow: 0 24px 48px -24px color-mix(in oklch, var(--color-texto) 40%, transparent);
+/* Entrada: visible por defecto (sin JS / reduced-motion). El JS oculta y anima
+   solo dentro de matchMedia('no-preference') — así nunca hay parpadeo. */
+
+/* Collage de fotos reales */
+.hero__collage {
+  position: relative;
+  height: 100%;
+  min-height: 30rem;
 }
-.hero__panel-sello { font-family: var(--fuente-display); font-size: var(--tam-244); font-weight: var(--peso-display-fuerte); }
-.hero__panel-sub { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: var(--espacio-1); }
+.foto-flotante, .sello-logo {
+  position: absolute;
+  margin: 0;
+  border-radius: var(--radio-md);
+  overflow: hidden;
+  box-shadow: 0 20px 40px -20px color-mix(in oklch, var(--color-texto) 55%, transparent);
+  border: 6px solid var(--color-fondo);
+  will-change: transform;
+}
+.foto-flotante img, .sello-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.foto-flotante--barra   { width: 44%; aspect-ratio: 3/4; top: 0%;   left: 4%;  z-index: 2; }
+.foto-flotante--comedor { width: 38%; aspect-ratio: 3/4; top: 6%;   right: 0%; z-index: 3; }
+.foto-flotante--burrata { width: 46%; aspect-ratio: 16/10; bottom: 12%; left: 0%; z-index: 4; }
+.foto-flotante--equipo  { width: 34%; aspect-ratio: 1/1;  bottom: 0%; right: 8%; z-index: 1; }
+.sello-logo {
+  width: 8.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  top: 42%;
+  left: 38%;
+  z-index: 5;
+  border-width: 4px;
+  box-shadow: 0 16px 32px -12px color-mix(in oklch, var(--color-texto) 60%, transparent);
+}
 
 /* Secciones genéricas */
 .seccion { padding-block: var(--espacio-12); }
@@ -164,6 +205,7 @@ p { margin: 0 0 var(--espacio-2); color: var(--color-texto-suave); }
   background: color-mix(in oklch, var(--color-temporada) 10%, var(--color-fondo));
 }
 .tarjeta-momento h3 { margin-bottom: var(--espacio-1); }
+.tarjeta-momento, .tarjeta-opinion, .grid-platos li { will-change: transform, opacity; }
 .tarjeta-momento p { margin: 0; font-size: 0.95rem; }
 
 /* Opiniones */
@@ -207,6 +249,33 @@ address { font-style: normal; margin-bottom: var(--espacio-3); font-size: 1.05re
 
 @media (max-width: 860px) {
   .nav { display: none; }
-  .hero__grid { grid-template-columns: 1fr; }
-  .hero__panel { order: -1; aspect-ratio: 16 / 10; }
+  .hero { padding-block: var(--espacio-6) var(--espacio-8); }
+  .hero__grid { grid-template-columns: 1fr; min-height: 0; }
+
+  /* En mobile el scatter absoluto es frágil: grid estática de 2 columnas */
+  .hero__collage {
+    order: -1;
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-2);
+    min-height: 0;
+    margin-bottom: var(--espacio-4);
+  }
+  .foto-flotante, .sello-logo {
+    position: static;
+    width: 100% !important;
+    inset: auto !important;
+  }
+  .foto-flotante--barra   { aspect-ratio: 3/4; }
+  .foto-flotante--comedor { aspect-ratio: 3/4; }
+  .foto-flotante--burrata { grid-column: 1 / -1; aspect-ratio: 21/9; }
+  .foto-flotante--equipo  { aspect-ratio: 3/4; }
+  .sello-logo {
+    grid-column: 1 / -1;
+    width: 4.5rem !important;
+    aspect-ratio: 1/1;
+    justify-self: center;
+    margin-block: calc(var(--espacio-2) * -1) 0;
+  }
 }

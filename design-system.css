@@ -5,16 +5,16 @@
 */
 
 :root {
-  /* Primitivos OKLCH */
-  --primitivo-crema-99: oklch(97.5% 0.02 85);
-  --primitivo-crema-95: oklch(94% 0.03 80);
-  --primitivo-tinta-15: oklch(21% 0.02 55);
-  --primitivo-tinta-10: oklch(15% 0.015 55);
-  --primitivo-dorado-55: oklch(68% 0.13 75);
+  /* Primitivos — muestreados de las fotos reales del local (ver referencias/REFERENCIAS.md §Paleta v2) */
+  --primitivo-crema-99: #F1E9E3;      /* fondo del logo real */
+  --primitivo-crema-95: #E6D6CE;      /* pared del letrero de fachada */
+  --primitivo-tinta-15: #33190C;      /* tinta del logo (pan ilustrado) */
+  --primitivo-tinta-10: #1B1210;      /* pared detrás del equipo, luz cálida de noche */
+  --primitivo-dorado-55: oklch(68% 0.13 75);   /* dorado de piezas de temporada (Instagram) */
   --primitivo-dorado-40: oklch(52% 0.12 70);
   --primitivo-oxblood-35: oklch(33% 0.09 25);
-  --primitivo-madera-45: oklch(45% 0.05 50);
-  --primitivo-linea-90: oklch(88% 0.02 80);
+  --primitivo-madera-45: #8A7256;     /* mesón de madera de la barra */
+  --primitivo-linea-90: #E3D2C8;
 
   /* Semánticos — color */
   --color-fondo: var(--primitivo-crema-99);

@@ -26,8 +26,22 @@ de cada dato antes de cambiarlo.
 
 ## Pendiente declarado
 
-- Fotografía real del local: el sitio está diseñado para recibirla (bloques
-  de color en vez de placeholders), pero no se generó ni se scrapeó ninguna
-  imagen — el cliente debe entregar sus propias fotos.
+- Fotos reales entregadas por el cliente (`Imagenes cargadas/`, ignorada por
+  git) ya están en uso, copiadas con nombre descriptivo a `assets/hero/`. Son
+  thumbnails de baja resolución (335–599px) — de ahí que el hero las use en
+  tarjetas pequeñas rotadas, no a pantalla completa. Si el cliente entrega
+  las fotos originales en alta resolución, reemplazar los archivos en
+  `assets/hero/` manteniendo los mismos nombres.
 - Mapa embebido: por ahora es un enlace "Cómo llegar" a Google Maps; si se
   quiere el iframe embebido hace falta decidir si vale el peso de página.
+
+## Capa de animación (hero + reveals)
+
+GSAP + ScrollTrigger + Lenis por CDN (ver `js/main.js`). Patrón: entrada por
+`gsap.timeline` al cargar (palabras del titular, textos, collage de fotos y
+sello del logo), parallax por capa en `#hero` al hacer scroll, y
+`ScrollTrigger.batch('.rev', …)` para el resto de secciones. Todo con
+`gsap.matchMedia('(prefers-reduced-motion: no-preference)')`: si el usuario
+pide reducir movimiento, el CSS ya deja todo visible por defecto y el JS
+simplemente no aplica el `gsap.set` que lo oculta — cero parpadeo, cero rama
+`reduce` que mantener aparte.

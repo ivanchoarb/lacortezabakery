@@ -33,29 +33,47 @@
 
 <main>
 
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="contenedor hero__grid">
       <div class="hero__texto">
-        <p class="ojo-de-texto">Granada · Cali</p>
-        <h1>El pan sale del horno antes que tú entres por la puerta</h1>
-        <p class="hero__parrafo">
+        <p class="ojo-de-texto rev-item">Granada · Cali</p>
+        <h1 class="hero__titulo" aria-label="El pan sale del horno antes que tú entres por la puerta">
+          <span data-linea><span data-word>El</span> <span data-word>pan</span> <span data-word>sale</span> <span data-word>del</span> <span data-word>horno</span></span>
+          <span data-linea><span data-word>antes</span> <span data-word>que</span> <span data-word>tú</span> <span data-word>entres</span></span>
+          <span data-linea class="hero__titulo-acento"><span data-word>por</span> <span data-word>la</span> <span data-word>puerta</span></span>
+        </h1>
+        <p class="hero__parrafo rev-item">
           Panadería artesanal y café de verdad, en un espacio para quedarte:
           a trabajar por la mañana, a celebrar en familia el domingo, o a
           vivir un taller de pizza y cócteles en pareja.
         </p>
-        <div class="hero__acciones">
+        <div class="hero__acciones rev-item">
           <a class="boton boton--acento boton--lg" href="https://wa.me/573173278616?text=Hola%2C%20quiero%20reservar%20una%20mesa%20en%20La%20Corteza" target="_blank" rel="noopener">Reservar mesa por WhatsApp</a>
           <a class="enlace-secundario" href="#menu">Ver el menú ↓</a>
         </div>
-        <dl class="hero__datos">
+        <dl class="hero__datos rev-item">
           <div><dt>Google</dt><dd>4,8 / 5 · 273 opiniones</dd></div>
           <div><dt>TripAdvisor</dt><dd>N.º 9 de 37 panaderías en Cali</dd></div>
           <div><dt>Horario</dt><dd>Lun–Sáb 8:30am–8pm · Dom 8:30am–7pm</dd></div>
         </dl>
       </div>
-      <div class="hero__panel" aria-hidden="true">
-        <span class="hero__panel-sello">La Corteza</span>
-        <span class="hero__panel-sub">Bakery &amp; Coffee</span>
+
+      <div class="hero__collage" aria-hidden="true">
+        <figure class="foto-flotante foto-flotante--barra" data-parallax="0.5" data-rot="-4">
+          <img src="assets/hero/interior-barra.jpeg" alt="" loading="eager" />
+        </figure>
+        <figure class="foto-flotante foto-flotante--comedor" data-parallax="0.9" data-rot="3">
+          <img src="assets/hero/interior-comedor.jpeg" alt="" loading="eager" />
+        </figure>
+        <figure class="foto-flotante foto-flotante--burrata" data-parallax="0.7" data-rot="-2">
+          <img src="assets/hero/burrata.jpeg" alt="" loading="eager" />
+        </figure>
+        <figure class="foto-flotante foto-flotante--equipo" data-parallax="1.1" data-rot="5">
+          <img src="assets/hero/equipo.jpeg" alt="" loading="eager" />
+        </figure>
+        <figure class="sello-logo" data-parallax="1.3" data-rot="-8">
+          <img src="assets/hero/logo-corteza.jpeg" alt="La Corteza Bakery & Coffee" loading="eager" />
+        </figure>
       </div>
     </div>
   </section>
@@ -65,14 +83,14 @@
       <h2>Del menú que más piden</h2>
       <p class="seccion__intro">Una carta pensada para café de trabajo, brunch de familia y sobremesa larga.</p>
       <ul class="grid-platos">
-        <li><span class="grid-platos__nombre">Tostadas francesas</span><span class="grid-platos__cat">Brunch</span></li>
-        <li><span class="grid-platos__nombre">Entrada de burrata</span><span class="grid-platos__cat">Para compartir</span></li>
-        <li><span class="grid-platos__nombre">Bagel de jamón serrano</span><span class="grid-platos__cat">Salado</span></li>
-        <li><span class="grid-platos__nombre">Salmón</span><span class="grid-platos__cat">Plato fuerte</span></li>
-        <li><span class="grid-platos__nombre">Pizza vegetariana</span><span class="grid-platos__cat">Horno de leña</span></li>
-        <li><span class="grid-platos__nombre">Pan de guayaba</span><span class="grid-platos__cat">Panadería</span></li>
-        <li><span class="grid-platos__nombre">Croissant con café</span><span class="grid-platos__cat">Desayuno</span></li>
-        <li><span class="grid-platos__nombre">Torta de snickers</span><span class="grid-platos__cat">Postre</span></li>
+        <li class="rev"><span class="grid-platos__nombre">Tostadas francesas</span><span class="grid-platos__cat">Brunch</span></li>
+        <li class="rev"><span class="grid-platos__nombre">Entrada de burrata</span><span class="grid-platos__cat">Para compartir</span></li>
+        <li class="rev"><span class="grid-platos__nombre">Bagel de jamón serrano</span><span class="grid-platos__cat">Salado</span></li>
+        <li class="rev"><span class="grid-platos__nombre">Salmón</span><span class="grid-platos__cat">Plato fuerte</span></li>
+        <li class="rev"><span class="grid-platos__nombre">Pizza vegetariana</span><span class="grid-platos__cat">Horno de leña</span></li>
+        <li class="rev"><span class="grid-platos__nombre">Pan de guayaba</span><span class="grid-platos__cat">Panadería</span></li>
+        <li class="rev"><span class="grid-platos__nombre">Croissant con café</span><span class="grid-platos__cat">Desayuno</span></li>
+        <li class="rev"><span class="grid-platos__nombre">Torta de snickers</span><span class="grid-platos__cat">Postre</span></li>
       </ul>
       <p class="seccion__nota">Precio promedio por persona: $40.000–60.000 · Carta completa y domicilios en <a href="https://app.menupp.co/restaurant/lacorteza" target="_blank" rel="noopener">menupp</a> y <a href="https://www.rappi.com.co" target="_blank" rel="noopener">Rappi</a>.</p>
     </div>
@@ -82,19 +100,19 @@
     <div class="contenedor">
       <h2>Un lugar distinto según la hora</h2>
       <div class="grid-momentos">
-        <article class="tarjeta-momento">
+        <article class="tarjeta-momento rev">
           <h3>Café para trabajar</h3>
           <p>Wifi, silla cómoda y nadie te apura. Entre semana, de mañana.</p>
         </article>
-        <article class="tarjeta-momento">
+        <article class="tarjeta-momento rev">
           <h3>Brunch en familia</h3>
           <p>Zona familiar y terraza para quedarse toda la tarde del domingo.</p>
         </article>
-        <article class="tarjeta-momento tarjeta-momento--temporada">
+        <article class="tarjeta-momento tarjeta-momento--temporada rev">
           <h3>Talleres de pizza &amp; cócteles</h3>
           <p>Una noche para dos: cupo limitado, se reserva con antelación.</p>
         </article>
-        <article class="tarjeta-momento">
+        <article class="tarjeta-momento rev">
           <h3>Coffee party &amp; experiencias</h3>
           <p>Catas y encuentros para quien quiere descubrir algo nuevo.</p>
         </article>
@@ -106,19 +124,19 @@
     <div class="contenedor">
       <h2>Lo que dicen quienes ya vinieron</h2>
       <div class="grid-opiniones">
-        <figure class="tarjeta-opinion">
+        <figure class="tarjeta-opinion rev">
           <blockquote>“Un lugar muy agradable para pasar tiempo, especialmente si quieres
           hacer algo de trabajo en tu portátil... el olor de los artículos de
           panadería frescos fue honestamente un punto culminante.”</blockquote>
           <figcaption>— Reseña en TripAdvisor</figcaption>
         </figure>
-        <figure class="tarjeta-opinion">
+        <figure class="tarjeta-opinion rev">
           <blockquote>“Bueno, bonito, precio justo. Muy buen lugar para tomar delicioso
           café con mucha variedad de preparaciones, ricos postres y buenas
           opciones saladas.”</blockquote>
           <figcaption>— Reseña en TripAdvisor</figcaption>
         </figure>
-        <figure class="tarjeta-opinion tarjeta-opinion--destacada">
+        <figure class="tarjeta-opinion tarjeta-opinion--destacada rev">
           <blockquote>“En La Corteza ofrecemos una experiencia gastronómica única, donde
           el pan artesanal se encuentra con el aroma irresistible del buen café
           recién preparado.”</blockquote>
@@ -160,6 +178,9 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

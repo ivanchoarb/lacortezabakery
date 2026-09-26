@@ -64,15 +64,37 @@ manuscrita) que ya usa la mayoría de la competencia local (Krost Bakery,
 Panadería Artisana, Cumbre Pan & Cocina), y evitar la estética fría de cadena
 corporativa (Juan Valdez / Starbucks).
 
+## Fuente 4 — Fotos reales entregadas por el cliente
+
+`Imagenes cargadas/`: logo oficial en alta fidelidad, foto de fachada con el
+letrero 3D sobre pared color rosa-arcilla, interior (barra de madera curva +
+comedor con espejos en arco), foto del equipo completo y un plato de burrata.
+
+**Qué se toma:** la paleta real muestreada por código de estas fotos (más
+confiable que el ícono comprimido de Instagram) — ver tabla actualizada abajo.
+También el lenguaje visual del espacio: madera clara curva, arcos, negro en
+mobiliario (sillas, lámparas colgantes), pared rosa-arcilla en fachada.
+
+**Qué NO se toma:** las imágenes no se recortan/alteran fuera de lo necesario
+para el collage del hero; son de baja resolución (thumbnails), así que se usan
+en tarjetas pequeñas, nunca a pantalla completa.
+
+**Por qué:** reemplaza la paleta deducida del ícono de Instagram (más
+imprecisa) por colores muestreados directamente de las fotos del local.
+
 ## Paleta real observada (del logo y las piezas de promoción)
 
 | Rol | Color aprox. | De dónde sale |
 |---|---|---|
-| Base crema | `#F4EBDD` | fondo del sello/logo |
-| Tinta principal | `#241E19` | texto del logo, "La Corteza" |
+| Base crema | `#F1E9E3` | fondo real del logo (muestreado) |
+| Fondo alterno (rosa-arcilla) | `#E6D6CE` | pared del letrero de fachada (muestreado) |
+| Tinta principal | `#33190C` | tinta del pan ilustrado del logo (muestreado) |
+| Superficie oscura | `#1B1210` | pared tras el equipo, luz cálida nocturna (muestreado) |
 | Acento cálido (dorado) | `#C9962B` | titulares de promos ("Taller de Septiembre") |
-| Acento profundo (oxblood) | `#7A2E27` | usado con moderación, tono festivo de temporada |
-| Madera media | `#6B4A34` | interior/mesas en fotos del taller |
+| Madera media | `#8A7256` | mesón curvo de la barra (muestreado) |
+
+*v1 (ícono de Instagram, baja resolución) quedó reemplazada por esta v2,
+muestreada por código de las fotos reales entregadas por el cliente.*
 
 **Peso ponderado:** el crema es el fondo real (no el dorado ni el oxblood —
 esos son acentos escasos, tal como pide el método). Nunca se dedujo la paleta
